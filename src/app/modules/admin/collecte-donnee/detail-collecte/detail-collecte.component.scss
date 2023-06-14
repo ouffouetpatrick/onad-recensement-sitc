@@ -1,0 +1,69 @@
+mat-tab {
+    margin-top: 5rem;
+}
+
+#etat-tab .mat-tab-group .mat-tab-body-content {
+    padding: 0 !important;
+}
+
+.mat-tab-group
+    .mat-tab-header
+    .mat-tab-label-container
+    .mat-tab-list
+    .mat-tab-labels
+    .mat-tab-label.mat-tab-label-active {
+    color: white !important;
+    background-color: #ed6a18 !important;
+}
+
+.md\:max-w-160{
+    max-width: 100rem !important;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.image-container{
+    // border: 2px solid;
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.imge-card{
+    cursor: pointer;
+}
+
+.text-style1{
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.text-style2{
+    color: black;
+    // font-weight: bold;
+    font-size: 12px;
+}
+
+$badge-color1: orange !important;
+$badge-color2: green !important;
+
+.colorBadge > .mat-badge-content {
+    background-color: $badge-color2;
+}
+
+.info{
+    width: 30%;
+}
+
+.photo{
+    width: 70%;
+}
+
+.spaceGridIframe > iframe{
+    width: 100%;
+    height: 100%;
+}

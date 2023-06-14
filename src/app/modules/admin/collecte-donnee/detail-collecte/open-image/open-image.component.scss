@@ -1,0 +1,10 @@
+.openImage{
+    width: 450px;
+    height: 470px;
+}
+
+.openImage img{
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}

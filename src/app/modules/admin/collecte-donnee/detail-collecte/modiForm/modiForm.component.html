@@ -1,0 +1,165 @@
+<div class="flex flex-col max-w-240 md:min-w-160 max-h-screen -m-6">
+
+    <!-- Header -->
+    <div class="flex flex-0 items-center justify-between h-16 pr-3 sm:pr-5 pl-6 sm:pl-8 bg-primary text-on-primary">
+        <div class="text-lg font-medium">Modifier un enregistrement</div>
+        <button
+            mat-icon-button
+            (click)="close()"
+            [tabIndex]="-1">
+            <mat-icon
+                class="text-current"
+                [svgIcon]="'heroicons_outline:x'">
+            </mat-icon>
+        </button>
+    </div>
+    <!-- Compose form -->
+    <form class="flex flex-col flex-auto p-6 sm:p-8 overflow-y-auto">
+        <!-- <div class="flex"> 
+        <div class="md:col-span-2">
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-label>Country</mat-label>
+                <mat-icon
+                    class="icon-size-5"
+                    [svgIcon]="'heroicons_solid:location-marker'"
+                    matPrefix></mat-icon>
+                <mat-select [formControlName]="'country'">
+                    <mat-option >United States</mat-option>
+                    <mat-option>Canada</mat-option>
+                    <mat-option >Mexico</mat-option>
+                    <mat-option >France</mat-option>
+                    <mat-option>Germany</mat-option>
+                    <mat-option>Italy</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <div class="sm:col-span-2">
+            <mat-form-field class="fuse-mat-no-subscript w-full">
+                <mat-label>Language</mat-label>
+                <mat-icon
+                    class="icon-size-5"
+                    [svgIcon]="'heroicons_solid:globe-alt'"
+                    matPrefix></mat-icon>
+                <mat-select [formControlName]="'language'">
+                    <mat-option >English</mat-option>
+                    <mat-option >French</mat-option>
+                    <mat-option>Spanish</mat-option>
+                    <mat-option>German</mat-option>
+                    <mat-option>Italian</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        </div> -->
+
+        <div class="grid grid-cols-3 gap-4">
+            <div class="flex flex-col">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Equipements</mat-label>
+                    <mat-select required>
+                        <mat-option value="pompage">Station de prétraitement et de pompage</mat-option>
+                        <mat-option value="vidange">Station de traitement des boues de vidange</mat-option>
+                        <mat-option value="Canaux">Canaux</mat-option>
+                        <mat-option value="Dalot">Dalot</mat-option>
+                        <mat-option value="Egout">Egout</mat-option>
+                        <mat-option value="erecteur">Bassin erecteur</mat-option>
+                        <mat-option value="tampons">Bassin tampons</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Caracteristiques</mat-label>
+                    <mat-select required>
+                        <mat-option value="collectif">Assainissement collectif</mat-option>
+                        <mat-option value="non">Assainissement non collectif</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Numéro de série</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Milieu</mat-label>
+                    <mat-select required>
+                        <mat-option value="collectif">Urbain</mat-option>
+                        <mat-option value="non">Peri urbain</mat-option>
+                        <mat-option value="non">Rural</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Etat</mat-label>
+                    <mat-select required>
+                        <mat-option value="Bon">Bon</mat-option>
+                        <mat-option value="Moyen">Moyen</mat-option>
+                        <mat-option value="Mauvais">Mauvais</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Capacité</mat-label>
+                    <input matInput type="number" required>
+                </mat-form-field>
+            </div>
+        
+        
+            <div class="flex flex-col">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Type d'equipement</mat-label>
+                    <mat-select required>
+                        <mat-option value="assainissement">Assainissement</mat-option>
+                        <mat-option value="drainage">Drainage</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Anomalie</mat-label>
+                    <mat-select required>
+                        <mat-option value="Endommage">Endommagé</mat-option>
+                        <mat-option value="Bouche">Bouché</mat-option>
+                        <mat-option value="entretenu">Mal entretenu</mat-option>
+                        <mat-option value="recouvert">Non recouvert</mat-option>
+                        <mat-option value="Use">Usé</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Fabricant</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Date d'implantation</mat-label>
+            <input matInput required [matDatepicker]="picker">
+            <mat-hint>Jour/Mois/Annnée</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between mt-4 sm:mt-1">
+            <div class="flex items-center mt-4 sm:mt-0">
+                <button
+                    class="ml-auto sm:ml-0"
+                    mat-stroked-button
+                    mat-dialog-close>
+                    Annuler
+                </button>
+                <button
+                    class="order-first sm:order-last"
+                    mat-flat-button
+                    [color]="'accent'"
+                    type="submit">
+                    Modifier et valider
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

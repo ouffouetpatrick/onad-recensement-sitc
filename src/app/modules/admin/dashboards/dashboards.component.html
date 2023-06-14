@@ -1,0 +1,274 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <!-- Main -->
+    <div class="flex-auto border-t -mt-px pt-4 sm:pt-6">
+        <div class="w-full max-w-screen-xl mx-auto">
+            <!-- <div class="text-2xl font-semibold tracking-tight leading-6">Your Audience</div> -->
+            <!-- Tabs -->
+            <mat-tab-group class="sm:px-2" [animationDuration]="'0'">
+                <!-- Home -->
+                <mat-tab label="Traitement">
+                    <ng-template matTabContent>
+                        <div class="grid grid-cols-1 sm:grid-cols-1 gap-6 w-full min-w-0">
+                            <!-- Section title -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 w-full mt-6 md:mt-8">
+                                <!-- Course -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full mt-0 md:mt-0">
+                                    <!-- Course -->
+
+                                    <div class="flex flex-col h-96 shadow rounded-2xl overflow-hidden bg-card">
+                                        <!-- Course launch button -->
+                                        <div class="px-6 py-4 text-center bg-gray-300 dark:bg-transparent">
+
+                                            <span class="inline-flex items-center">
+                                                <div class="text-lg font-medium  dark:text-gren-500">
+                                                    Equipements récensés
+                                                </div>
+
+                                            </span>
+
+                                        </div>
+                                        <div class="flex flex-col p-6">
+                                            <div class="flex flex-col items-center mt-2">
+
+                                                <div class="flex flex-col items-center mt-2">
+                                                    <div
+                                                        class="text-7xl sm:text-8xl font-bold text-green-400 tracking-tight leading-none text-gray-300">
+                                                        150</div>
+                                                </div>
+                                            </div>
+                                            <div class="w-12 h-1 my-6">Détails</div>
+
+                                            <!-- Course time -->
+                                            <div class="flex items-baseline justify-between w-full mt-5 text-secondary">
+                                                <div class="text-md font-medium truncate">EN ATTENTES:</div>
+                                                <div class="ml-1.5 text-lg font-semibold">13</div>
+                                            </div>
+                                            <div class="flex items-baseline justify-between w-full mt-5 text-secondary">
+                                                <div class="text-md font-medium truncate">VALIDES:</div>
+                                                <div class="ml-1.5 text-lg font-semibold">13</div>
+                                            </div>
+                                            <div class="flex items-baseline justify-between w-full mt-5 text-secondary">
+                                                <div class="text-md font-medium truncate">REJETES:</div>
+                                                <div class="ml-1.5 text-lg font-semibold">13</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col h-96 shadow rounded-2xl overflow-hidden bg-card">
+                                        <!-- Course launch button -->
+                                        <div class="px-6 py-4 text-center bg-gray-300 dark:bg-transparent">
+
+                                            <span class="inline-flex items-center">
+                                                <div class="text-lg font-medium  dark:text-gren-500">
+                                                    Taux de traitement
+                                                </div>
+
+                                            </span>
+
+                                        </div>
+                                        <div class="flex flex-col p-6">
+                                            <div class="flex flex-col items-center mt-2">
+                                                <div
+                                                    class="text-7xl sm:text-8xl font-bold text-orange-400 tracking-tight leading-none text-gray-300">
+                                                    38.3%</div>
+                                            </div>
+                                            <div class="w-12 h-1 my-6">Détails</div>
+
+                                            <!-- Course time -->
+                                            <div class="flex items-baseline justify-between w-full mt-5 text-secondary">
+                                                <div class="text-md font-medium truncate">EN ATTENTES:</div>
+                                                <div class="ml-1.5 text-lg font-semibold">13%</div>
+                                            </div>
+                                            <div class="flex items-baseline justify-between w-full mt-5 text-secondary">
+                                                <div class="text-md font-medium truncate">VALIDES:</div>
+                                                <div class="ml-1.5 text-lg font-semibold">13%</div>
+                                            </div>
+                                            <div class="flex items-baseline justify-between w-full mt-5 text-secondary">
+                                                <div class="text-md font-medium truncate">REJETES:</div>
+                                                <div class="ml-1.5 text-lg font-semibold">13%</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <!-- Gender -->
+                                <div class="flex flex-col  h-96 bg-card shadow rounded-md overflow-hidden p-6 mr-5">
+                                    <div class="flex items-start justify-between">
+                                        <div class="text-lg font-medium tracking-tight leading-6 truncate">Suivi
+                                            traitement des Equipements
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col flex-auto mt-6 h-44">
+                                        <google-chart #chart [type]="typeVueEnsemble"
+                                            [data]="grapheStatutEquipement.data"
+                                            [columns]="grapheStatutEquipement.columnNames"
+                                            [options]="grapheStatutEquipement.options">
+                                        </google-chart>
+                                    </div>
+                                    <div class="mt-8">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-template>
+                </mat-tab>
+
+                <!-- Budget -->
+                <mat-tab label="Suivi types équipements">
+                    <div class="grid grid-cols-1 sm:grid-cols-1 gap-6 w-full min-w-0">
+                        <!-- Section title -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3  w-full mt-6 md:mt-8">
+                            <!-- New vs. Returning -->
+                            <div class="flex flex-col flex-auto bg-card shadow rounded-md overflow-hidden p-6 mr-5">
+                                <div class="flex items-start justify-between">
+                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">Type Equipements
+                                    </div>
+                                </div>
+                                <div class="flex flex-col flex-auto mt-6 h-44">
+                                    <google-chart #chart [type]="typeTypeEquipement" [data]="grapheTypeEquipement.data"
+                                        [columns]="grapheTypeEquipement.columnNames"
+                                        [options]="grapheTypeEquipement.options">
+                                    </google-chart>
+                                </div>
+
+                            </div>
+                            <!-- New vs. Returning -->
+                            <div class="flex flex-col flex-auto bg-card shadow rounded-md overflow-hidden p-6 mr-5">
+                                <div class="flex items-start justify-between">
+                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">Equipements
+                                        d'assainissement
+                                    </div>
+                                </div>
+                                <div class="flex flex-col flex-auto mt-6 h-44">
+                                    <google-chart #chart [type]="typeAssainissement"
+                                        [data]="grapheTypeAssainissement.data"
+                                        [columns]="grapheTypeAssainissement.columnNames"
+                                        [options]="grapheTypeAssainissement.options">
+                                    </google-chart>
+                                </div>
+
+                            </div>
+
+                            <!-- Gender -->
+                            <div class="flex flex-col flex-auto bg-card shadow rounded-md overflow-hidden p-6 mr-5">
+                                <div class="flex items-start justify-between">
+                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">Equipements de
+                                        drainage
+                                    </div>
+                                </div>
+                                <div class="flex flex-col flex-auto mt-6 h-44">
+                                    <google-chart #chart [type]="typeDrainage" [data]="grapheTypeDrainage.data"
+                                        [columns]="grapheTypeDrainage.columnNames"
+                                        [options]="grapheTypeDrainage.options">
+                                    </google-chart>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+                <!-- Budget -->
+                <mat-tab label="Suivi équipement">
+                    <ng-template matTabContent>
+                        <div class="grid grid-cols-1 sm:grid-cols-1 gap-12 w-full min-w-0">
+                            <!-- Section title -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 w-full mt-6 md:mt-8">
+                                <!-- New vs. Returning -->
+                                <div class="flex flex-col flex-auto bg-card shadow rounded-md overflow-hidden p-6 mr-5">
+                                    <div class="flex items-start justify-between">
+                                        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+                                            Equipements
+                                        </div>
+
+                                    </div>
+                                    <div class="flex flex-col flex-auto mt-6 h-50">
+                                        <google-chart #chart [type]="type" [data]="grapheEquipement.data"
+                                            [columns]="grapheEquipement.columnNames"
+                                            [options]="grapheEquipement.options">
+                                        </google-chart>
+                                    </div>
+                                </div>
+
+                                <!-- New vs. Returning -->
+                                <div class="flex flex-col flex-auto bg-card shadow rounded-md overflow-hidden p-6 mr-5">
+                                    <div class="flex items-start justify-between">
+                                        <div class="text-lg font-medium tracking-tight leading-6 truncate">
+                                            Milieux
+                                        </div>
+
+                                    </div>
+                                    <div class="flex flex-col flex-auto mt-6 h-44">
+                                        <google-chart #chart [type]="typeMilieux" [data]="grapheMilieux.data"
+                                            [columns]="grapheMilieux.columnNames" [options]="grapheMilieux.options">
+                                        </google-chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ng-template>
+                </mat-tab>
+                <!-- Budget -->
+            </mat-tab-group>
+        </div>
+
+
+
+        <!-- Courses -->
+        <!-- <ng-container>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 sm:mt-10">
+                <ng-container>
+                    
+                    <div class="flex flex-col h-96 shadow rounded-2xl overflow-hidden bg-card">
+                      
+                        <div class="px-6 py-4 text-center bg-gray-50 dark:bg-transparent">
+
+                            <span class="inline-flex items-center">
+                                <div class="text-lg font-medium text-gray-400 dark:text-gren-500">
+                                    Statuts Equipements
+                                </div>
+
+                            </span>
+
+                        </div>
+                        <div class="flex flex-col p-6">
+                            <div class="flex flex-col items-center mt-2">
+                                <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-gray-300">
+                                    38</div>
+
+                                <div class="text-lg font-medium text-gray-400 dark:text-gray-400">
+                                    Equipements recensés
+                                </div>
+                            </div>
+                            <div class="w-12 h-1 my-6">Details</div>
+
+                            <div class="flex items-baseline justify-center w-full mt-5 text-secondary">
+                                <div class="text-md font-medium truncate">EN ATTENTES:</div>
+                                <div class="ml-1.5 text-lg font-semibold">13</div>
+                            </div>
+                            <div class="flex items-baseline justify-center w-full mt-5 text-secondary">
+                                <div class="text-md font-medium truncate">VALIDES:</div>
+                                <div class="ml-1.5 text-lg font-semibold">13</div>
+                                <mat-icon class="icon-size-5 text-green-600"
+                                    [svgIcon]="'heroicons_solid:badge-check'"></mat-icon>
+                            </div>
+                            <div class="flex items-baseline justify-center w-full mt-5 text-secondary">
+                                <div class="text-md font-medium truncate">REJETES:</div>
+                                <div class="ml-1.5 text-lg font-semibold">13</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </ng-container>
+            </div>
+        </ng-container> -->
+    </div>
+</div>

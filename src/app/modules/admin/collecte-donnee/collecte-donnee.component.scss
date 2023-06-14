@@ -1,0 +1,44 @@
+#etat-tab .mat-tab-group .mat-tab-body-content {
+    padding: 0 !important;
+}
+
+.mat-tab-group
+    .mat-tab-header
+    .mat-tab-label-container
+    .mat-tab-list
+    .mat-tab-labels
+    .mat-tab-label.mat-tab-label-active {
+    color: white !important;
+    background-color: #ed6a18 !important;
+}
+
+.mat-form-field-flex{
+    min-height: 40px !important;
+}
+
+.chexbox-h2 {
+    margin: 10px;
+  }
+  
+  .chexbox-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .chexbox-margin {
+    margin: 0 10px;
+  }
+
+.statut{
+  color: #4f46e5;
+}
+
+.mat-radio-outer-circle{
+  border-color:#4f46e5 !important;
+}
+
+.mat-radio-inner-circle{
+  background-color:#4f46e5 !important;
+}

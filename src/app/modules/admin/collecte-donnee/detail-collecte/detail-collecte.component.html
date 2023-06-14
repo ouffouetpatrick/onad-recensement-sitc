@@ -1,0 +1,133 @@
+<div class="sm:absolute sm:inset-0 flex flex-col flex-auto min-w-0 sm:overflow-hidden bg-card dark:bg-transparent">
+    
+    <!-- Header -->
+    <div class="relative flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-3 px-6 md:px-8 border-b">
+        <!-- Loader -->
+        <div class="absolute inset-x-0 bottom-0" >
+        <!-- <mat-progress-bar ></mat-progress-bar> -->
+        </div>
+        <!-- Title -->
+        <div class="text-4xl font-extrabold tracking-tight">Detail collecte</div>
+        <div>
+            <div class="button-validate">
+                <button (click)="valider()" mat-raised-button color="primary">Valider</button> &nbsp;
+                <button (click)="openDialogModiForm()" mat-raised-button color="accent">Modifier et valider</button> &nbsp;
+                <button (click)="openDialogRejeterForm()" mat-raised-button color="warn">Rejeter</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main -->
+    <div class="flex flex-auto overflow-hidden">
+        <div class="flex flex-col flex-auto sm:mb-0 overflow-hidden sm:overflow-y-auto rounded-lg">
+            <mat-tab-group [animationDuration]="'0ms'">
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Details
+                    </ng-template>
+                    <div>
+                        <div class="grid sm:grid-cols-3 grid-cols-1 gap-1">
+                            <div class="grid grid-cols-2 gap-1">
+                                <div>
+                                    <div class="text-lg italic leading-relaxed mt-4 ">
+                                        <span class="text-style1">Equipement</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Milieu</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Type equipement</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Caracteristique</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Etat</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Anomalie</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Numéro serie</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Capacite</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Fabricant</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style1">Date implantation</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-lg italic leading-relaxed mt-4 ">
+                                        <span class="text-style2">: {{detail.equipement}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.milieu}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.typeEquipement}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.caracteristique}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.etat}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.anomalie}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.numeroSerie}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.capacite}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.fabricant}}</span>
+                                    </div>
+                                    <div class="text-lg italic leading-relaxed mt-4">
+                                        <span class="text-style2">: {{detail.dateImplantation}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-2 spaceGridIframe">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15889.751740685679!2d-3.9726075!3d5.34993555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sci!4v1674651341573!5m2!1sfr!2sci" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Photos <span [matBadge]="3" class="ml-5 colorBadge" matBadgeOverlap="large"></span>
+                    </ng-template>
+                    <div class="grid sm:grid-cols-3 grid-cols-1 gap-4">
+                        <div class="imge-card" 
+                        (click)="openDialogImage()">
+                            <img src="../../../../../../assets/images/img1.jpg" alt="IMAGE">
+                        </div>
+                        <div class="imge-card" 
+                        (click)="openDialogImage()">
+                            <img src="../../../../../../assets/images/img2.jpg" alt="IMAGE">
+                        </div>
+                        <div class="imge-card" 
+                        (click)="openDialogImage()">
+                            <img src="../../../../../../assets/images/img3.jpg" alt="IMAGE">
+                        </div>
+                    </div>
+                    
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
